@@ -17,33 +17,11 @@
 
 坐标系沿用数据集的整体人体坐标（**原点不在模型中心**，模型位于 x≈0.21、y≈0.99、z≈0.12 米处），这样 12 个部位文件可以叠在一起拼成人体；取景请用包围盒算，不要写死相机位置。
 
-## 让 AI 助手直接帮你做
-
-把下面这段连仓库地址一起发给 DSH：
-
-```
-从这个仓库拉取左前臂与左手的解剖模型，做一个可以用鼠标旋转缩放的三维网页：
-https://github.com/2962660049/Left-arm-class-glb
-先读仓库里的 AGENT.md，再下载 glb/hand_elbow_left.glb（4.7 MB），不要克隆整个仓库。
-```
-
-模型直链（写进自己的页面用这个）：
-
-```
-https://raw.githubusercontent.com/2962660049/Left-arm-class-glb/main/glb/hand_elbow_left.glb
-```
-
-> 如果 `raw.githubusercontent.com` 打不开（国内常见），改用 `git clone https://github.com/2962660049/Left-arm-class-glb.git`，
-> 或者下载仓库的 `example/index.html`——它是单文件版，模型已经内嵌，双击就能看。
-
-
 ## 三个必踩的坑
 
-1. **双击打开 html 会加载失败**（`file://` 下浏览器禁止读取本地 glb）。三种解法：
-
-   * 把 html 和 glb 放到同一个本地服务器：`python -m http.server 8000`，浏览器开 `http://localhost:8000`；
-   * 或者把模型换成线上地址 `https://raw.githubusercontent.com/2962660049/Left-arm-class-glb/main/glb/hand_elbow_left.glb`（带 CORS，`file://` 下也能读）；
-   * 或者用 VS Code 的 Live Server 插件。
+1. **双击打开 html 会加载失败**（`file://` 下浏览器禁止读取本地 glb）。把 html 和 glb 放进同一个文件夹，
+   再在该文件夹起一个本地服务器：`python -m http.server 8000`，浏览器开 `http://localhost:8000`；
+   或直接用 VS Code 的 Live Server 插件。
 2. **模型很大**：长轴 0.67 m。相机别用默认的 `z = 5`，先算包围盒再取景，否则要么看不见要么贴脸。
 3. **`bp3d\_group` 是 `other` 的 8 个部件是区域包络**（`userData.bp3d\_envelope === '1'`），不是真实器官，画面上会像半透明的壳，建议默认隐藏。
 

@@ -4,19 +4,14 @@
 
 ## 一句话
 
-仓库里只有**一个**模型文件，直接加载它即可。
+仓库里只有**一个**模型文件，本地加载它即可。
 
 ```
 glb/hand_elbow_left.glb     4.74 MB
 ```
 
-**不要 `git clone` 整个仓库，也不要下载其他文件。** 只需要这一个 glb（外加可选的 `preview.png`）。
-
-远程直链（若页面用 `file://` 打开，必须用这个而不是相对路径）：
-
-```
-https://raw.githubusercontent.com/2962660049/Left-arm-class-glb/main/glb/hand_elbow_left.glb
-```
+按相对路径引用（页面放在仓库根目录时是 `./glb/hand_elbow_left.glb`，放在 `example/` 里是 `../glb/hand_elbow_left.glb`）。
+`file://` 下浏览器不许读本地 glb，此时需要起本地服务器（见文末）。
 
 ## 规格
 
@@ -94,9 +89,9 @@ camera.lookAt(center);
 controls.target.copy(center);
 ```
 
-## 分发与加载的坑
+## 加载的坑
 
-1. `file://` 下 `GLTFLoader` 读**相对路径**会被 CORS 拦（浏览器禁止 XHR 读本地文件）。要么起本地服务器（`python -m http.server`），要么加载上面的 raw 直链（`raw.githubusercontent.com` 带 `Access-Control-Allow-Origin: *`）。
+1. `file://` 下 `GLTFLoader` 读**相对路径**会被 CORS 拦（浏览器禁止 XHR 读本地文件）。在 glb 所在目录起个本地服务器（`python -m http.server 8000`，然后访问 `http://localhost:8000`）即可。
 2. 模型只有 4.7 MB，不要为了"优化"去做 Draco 压缩——会让页面额外依赖解码器，课堂环境容易失败。
 3. 不要开 `castShadow`/`receiveShadow` 整片打光，123 个部件做实时阴影在弱显卡上会掉帧；用两盏方向光 + 环境光即可。
 4. 材质的 `baseColorFactor` 已是线性值，直接当 `MeshStandardMaterial.color` 用会略偏亮，需要精确配色时按 sRGB 重新乘一次。

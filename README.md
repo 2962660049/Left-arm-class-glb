@@ -33,6 +33,9 @@ https://github.com/2962660049/Left-arm-class-glb
 https://raw.githubusercontent.com/2962660049/Left-arm-class-glb/main/glb/hand_elbow_left.glb
 ```
 
+> 如果 `raw.githubusercontent.com` 打不开（国内常见），改用 `git clone https://github.com/2962660049/Left-arm-class-glb.git`，
+> 或者下载仓库的 `example/index.html`——它是单文件版，模型已经内嵌，双击就能看。
+
 
 ## 三个必踩的坑
 

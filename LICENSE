@@ -1,0 +1,32 @@
+# LICENSE — Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+本仓库的 3D 模型数据（`glb/` 目录）来自 **BodyParts3D**，由
+ライフサイエンス統合データベースセンター（Database Center for Life Science, DBCLS）
+以 **Creative Commons Attribution 4.0 International** 许可发布。
+本仓库的转换、分类与再导出属衍生作品，同样以 **CC BY 4.0** 提供。
+
+## 你可以
+
+- **共享** —— 以任何媒介或格式复制、发行本作品
+- **演绎** —— 修改、转换、基于本作品创作（包括商业用途）
+
+## 你必须
+
+- **署名** —— 保留适当的署名、许可链接，并说明是否作了修改（见 `NOTICE.md`）
+- 不得附加法律条款或技术措施，限制他人行使许可所授予的权利
+
+## 许可全文
+
+本文件只是要点摘要，**不具有法律效力**。具有法律效力的完整文本见：
+
+- 英文（官方，法律文本）：https://creativecommons.org/licenses/by/4.0/legalcode
+- 中文（官方译文）：https://creativecommons.org/licenses/by/4.0/legalcode.zh-Hans
+- 人类可读摘要：https://creativecommons.org/licenses/by/4.0/
+
+## 必须保留的署名
+
+```
+BodyParts3D, (c) The Database Center for Life Science licensed under CC Attribution 4.0 International
+```
+
+数据集主页：https://dbarchive.biosciencedbc.jp/en/bodyparts3d/

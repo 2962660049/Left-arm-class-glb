@@ -1,0 +1,32 @@
+{
+  "package": "left-arm-class",
+  "purpose": "课堂用左前臂 + 左手解剖模型（BodyParts3D ISA 子集）",
+  "generated": "2026-10-22",
+  "license": {
+    "id": "CC-BY-4.0",
+    "attribution": "BodyParts3D © ライフサイエンス統合データベースセンター licensed under CC BY 4.0",
+    "source": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/"
+  },
+  "default_model": "glb/hand_elbow_left.glb",
+  "models": [
+    {
+      "file": "glb/hand_elbow_left.glb",
+      "bytes": 4969324,
+      "nodes": 123,
+      "triangles": 227028,
+      "groups": { "muscle": 35, "bone": 29, "artery": 28, "vein": 23, "other": 8 },
+      "world_size_m": [0.218, 0.673, 0.153],
+      "world_bbox_m": [[0.107, 0.653, 0.042], [0.324, 1.327, 0.195]],
+      "up": "Y",
+      "units": "meter (node scale 0.001 applied to millimetre vertices)",
+      "origin": "dataset body origin, NOT model centre"
+    }
+  ],
+  "node_extras": {
+    "bp3d_id": "BodyParts3D element id, e.g. FJ1469",
+    "bp3d_group": "muscle | bone | artery | vein | other",
+    "bp3d_fma": "FMA ontology id, may be empty",
+    "bp3d_cats": "region tags",
+    "bp3d_envelope": "1 on region-envelope nodes (organ zone / anatomical set) — hide by default"
+  }
+}
